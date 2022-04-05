@@ -14,6 +14,8 @@ class Artista {
 
 }
 
+const d = document.querySelector('#id')
+
 class UI {
 
 
