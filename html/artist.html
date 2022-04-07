@@ -22,7 +22,7 @@
 
     <main id="container">
         <section class="sectionPage" id="heroContent"> 
-            <video playsinline autoplay muted loop poster="cake.jpg">
+            <video playsinline autoplay muted loop>
                 <source src="../assets/video/pexels-alena-darmel-7722221.mp4" type="video/webm">
                 Your browser does not support the video tag.
             </video>
@@ -98,10 +98,34 @@
                 </div>
             </div>
         </section>
-        <section class="sectionPage" id="success">
-            <h2>¡RESERVASTE TUS ENTRADAS!</h2>
-            <form action="./index.html">
-                    <input type="submit" value="VOLVER" id="back">
+        <section class="sectionPage" id="form">
+            <h2>¡RESERVA YA TUS ENTRADAS!</h2>
+            <form action="./submit.html#success">
+                    <label for="name"> NOMBRE</label>
+                    <br>
+                    <input type="text" id="name" placeholder="Tu nombre" required pattern="[A-Za-z]{1,32}">
+                    <br>
+                    <label for="lastname"> APELLIDO</label>
+                    <br>
+                    <input type="text" id="lasname" placeholder="Tu Apellido" required pattern="[A-Za-z]{1,32}">
+                    <br>
+                    <label for="tel">TELÉFONO</label>
+                    <br>
+                    <input type="tel" id="phone" name="phone" placeholder="1234567890" pattern="[0-9]{10}" required>
+                    <br>
+                    <label for="email">CORREO ELECTRÓNICO</label>
+                    <br>
+                    <input type="email" name="email" id="email" placeholder="alguien@example.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                    <br>
+                    <label for="days">NUMERO DE DÍAS</label>
+                    <br>
+                    <input type="number" name="days" id="days" min="1" max="3" placeholder="1" required>
+                    <br>
+                    <label for="entrys">NUMERO DE ENTRADAS</label>
+                    <br>
+                    <input type="number" name="entrys" id="entrys" min="1" max="10" placeholder="1" required>
+                    <br>
+                    <input type="submit" value="RESERVAR" id="submit">
             </form>
         </section>
         <section class="sectionPage" id="partners">
