@@ -33,6 +33,7 @@ if(loginFormElement){
         event.preventDefault();
         // validacion y comparacion de los datos de inicio de sesion
         pass = inputPass.value;
+        if(!validatePass(pass)){return}
         let mypassword = encryptPassword(pass, key, true);
         let myuser = inputEmail.value;
         console.log("Logging in with user:",myuser, "and password:", mypassword);
@@ -49,8 +50,22 @@ if(loginFormElement){
             // inicio de sesion incorrecto
             alert("Incorrect data")
             loginFormElement.reset()
-        }
+        } 
     });
+    // funcion que valida la contraseña y sus caracteres 
+    function validatePass(pass){
+        for(let i = 0; i < pass.length; i++){
+            if(pass.charCodeAt(i) < 33 || pass.charCodeAt(i) > 126){
+                if(pass.charCodeAt(i) != 241 && pass.charCodeAt(i) != 209){
+                    console.log(pass[i], " pos: ", i);
+                    alert("Caracter inválido")
+                    loginFormElement.reset()
+                    return false;
+                }
+            }
+        }
+        return true; 
+    }
     // funcion que encripta o desencripta, recibe la cadena a decifrar, la lleva del cifrado y la orden de encriptado o desencriptado
     function encryptPassword(word, key, encrypt){
         // variables para guardar el cifrado y la cadena a retornar
@@ -85,7 +100,7 @@ if(loginFormElement){
             }
         }
         // transforma los codigos unicode en una cadena string para devolverla
-        for(let i = 0; i < word.length; i++){
+        for(let i = 0; i < unicodeWord.length; i++){
             newWord += String.fromCharCode(unicodeWord[i]);
         }
         return newWord
