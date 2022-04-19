@@ -42,7 +42,8 @@ class UI{
 
             const newArtist = document.createElement('div');
              newArtist.dataset.id = id;
-             newArtist.innerHTML = `${name} <br> ${spotifyList} <br> ${img} <br> ${description} <br> `
+             newArtist.innerHTML = `${name} <br> ${spotifyList} <br> 
+             <img src="${img}" alt="" width = '200' heigh = '200'>  <br> ${description} <br> `
              const btnDelete = document.createElement('button')
              btnDelete.textContent = "borrar";
              btnDelete.onclick = () =>{
