@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/animations.css">
+
     <link rel="icon" href="../assets/img/logo/logo_tomorrocrack_square.png">
 
     <title>TumorrowCrack Admin Panel</title>
+    
+    <link rel="stylesheet" href="../css/panel.css">
 
-    <link rel="stylesheet" href="../css/panel.css" />
   </head>
   <body>
+
+    <p id="idTmp" hidden></p>
     <header id="header">
       <a href="../html/index.html#heroContent" id="logoImglink"><img id="logoImg" src="../assets/img/logo/logo_tomorrocrack_white.png" alt="Logo"></a>
       <a href="../html/index.html#description" class="menuButton">
@@ -31,8 +35,8 @@
       </a>
       <a href="../html/index.html" class="menuButton" id="logoutLink"><p>Cerrar sesión</p></a>
   </header>
-  <main id="container">
-    <section class="sectionPage" id="adminArtists">
+  <main id="forms">
+    <section class="" id="adminArtists">
       <h2>Artistas</h2>
       <form id="formArtist" action="">
         <label for="nameArtist">Nombre:</label>
@@ -52,10 +56,10 @@
           accept="image/png, image/jpeg"
         />
         <br />
-        <input type="submit" value="Save" />
+        <input  id= 'submitbtnArtist' type="submit" value="Save" />
       </form>
     </section>
-    <section class="sectionPage" id="adminGallery">
+    <section class="" id="adminGallery">
       <h2>Galería</h2>
       <form id="formImg" action="">
         <label for="titleImage">Titulo Imagen:</label>
@@ -72,17 +76,24 @@
           accept="image/png, image/jpeg"
         />
         <br />
-        <input type="submit" value="Save" />
+        <input id = 'submitbtnImg'type="submit" value="Save" />
       </form>
     </section>
-    <section class="sectionPage" id="seeAdded">
-      <h2>Guardados</h2>
-      <div id="divArtist" style="display: flex; flex-wrap: wrap">
-        <section id="contentArtist" style="width: 40%"></section>
-        <section id="contentImg" style="width: 40%"></section>
-      </div>
-    </section>
+   
   </main>
+  <h2>Guardados</h2>
+  <section class="" id="seeAdded">
+    
+    <div id="mainContent" >
+      <section id="contentArtist" >
+        
+      </section>
+      <section id="contentImg" >
+        
+
+      </section>
+    </div>
+  </section>
     <script src="../js/app.js"></script>
   </body>
 </html>

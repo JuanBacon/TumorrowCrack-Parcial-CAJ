@@ -24,7 +24,7 @@ body {
 
 }
 
-#formArtist , #formImg{
+#adminArtists , #adminGallery{
 
     width: 50%;
 }
@@ -37,6 +37,7 @@ body {
     background: gray;
     border-radius: 8px;
     border:  4px gray solid ;
+    width: 100%;
 }
 
 #contentArtist, #contentImg{
@@ -51,11 +52,51 @@ body {
     padding: 10px;
     background: white;
     border-radius: 10px;
-    height: 350px ;
+    height: 300px ;
+}
+
+#seeAdded{
+
+    display: flex;
+    align-items: center;
+   
 }
 
 .divImg{
-
     display: flex;
-    align-items: center
+    align-items: center;
 }
+
+.nameArtist{
+
+    color: black;
+    font-size: 40px;
+}
+
+.divImg figure img{
+
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+.artistInfo{
+margin: 20px;
+
+}
+
+#contentArtist h2, #contentImg h2{
+
+    margin-left: 28px;
+
+}
+
+.button-delete{
+
+ background-color: red;
+}
+
+.button-delete{
+
+    color: aliceblue;
+   }

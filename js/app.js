@@ -38,6 +38,10 @@ class UI {
     const contentArtist = document.querySelector("#contentArtist");
     this.clearHTML(contentArtist);
 
+    const titleName = document.createElement('h2');
+    titleName.textContent = 'Artistas'
+    contentArtist.appendChild(titleName)
+
     artistList.forEach((artist) => {
       const { name, spotifyList, img, description, id } = artist;
 
@@ -56,10 +60,11 @@ class UI {
       const artistInfo = document.createElement("div");
       artistInfo.classList.add('artistInfo')
 
-      artistInfo.innerHTML = `      ${name} <br> ${spotifyList} <br> 
-      <br> ${description} <br> `
+      artistInfo.innerHTML = `     <h1 class= 'nameArtist'>${name} </h1><br> ${description} <br> <a href='${spotifyList}' target ='_blank'> Link Spotify</a>  <br> 
+       `
 
       const btnDelete = document.createElement("button");
+      btnDelete.classList.add('button-delete')
       btnDelete.textContent = "borrar";
       btnDelete.onclick = () => {
         deleteArtist(id);
@@ -82,14 +87,41 @@ class UI {
   addHTMLImg() {
     const contentImg = document.querySelector("#contentImg");
     this.clearHTML(contentImg);
+    
+    const titleName = document.createElement('h2');
+    titleName.textContent = 'Imagenes'
+    contentImg.appendChild(titleName)
 
     imgList.forEach((image) => {
       const { img, tittle, alt, id } = image;
       const newImg = document.createElement("div");
+      newImg.classList.add('contentDiv')
       newImg.dataset.id = id;
-      newImg.innerHTML = `<br> ${alt} <br> 
-             <img src="${img}" alt="" width = '200' heigh = '200'>  <br> ${tittle} <br> `;
+      newImg.innerHTML = `
+      
+        <div class = 'divImg'>
+        <figure> <img src="${img}" alt="" width = '200' heigh = '200'>  <br></figure>
+        
+        </div>
+`;
+
+
+ /*               
+      
+ <br> ${alt} <br> 
+ <br> ${tittle} <br> 
+ */
+
+ const imgInfo = document.createElement("div");
+ imgInfo.classList.add('artistInfo')
+
+ imgInfo.innerHTML = `   <h1 class= 'nameArtist'>${tittle} </h1><br> ${alt} <br>  <br> 
+  `
+
+
+
       const btnDelete = document.createElement("button");
+      btnDelete.classList.add('button-delete')
       btnDelete.textContent = "borrar";
       btnDelete.onclick = () => {
         deleteImg(id);
@@ -101,8 +133,10 @@ class UI {
         editImg(image);
       };
 
-      newImg.appendChild(btnEdit);
-      newImg.appendChild(btnDelete);
+      imgInfo.appendChild(btnEdit);
+      imgInfo.appendChild(btnDelete);
+      newImg.appendChild(imgInfo)
+
       contentImg.appendChild(newImg);
     });
     sincStorage();
@@ -279,8 +313,9 @@ function uploadArtist(e) {
         return artist;
       }
     });
-    ui.addHTMLArtist();
     editingArtist = false;
+    ui.addHTMLArtist();
+    
     formArtist.reset();
     return;
   } else {
