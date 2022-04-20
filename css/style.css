@@ -256,9 +256,13 @@ video {
 /* formularios */
 .form {
   background-color: #1d1d1d;
-  height: 110vh;
+  height: 120vh;
   justify-content: flex-start;
   color: white;
+}
+
+#precio{
+  font-size: 30px;
 }
 #success{
   color: white;
