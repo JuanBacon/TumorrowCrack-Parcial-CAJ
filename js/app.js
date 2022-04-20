@@ -35,7 +35,7 @@ class Img {
 
 class UI{
 
-    addArtist(){
+    addHTMLArtist(){
         const contentArtist = document.querySelector('#contentArtist')
         this.clearHTML(contentArtist);
 
@@ -63,10 +63,11 @@ class UI{
 
              contentArtist.appendChild(newArtist)
         })
+        sincStorage();
 
     }
 
-    addImg(){
+    addHTMLImg(){
       const contentImg = document.querySelector('#contentImg');
       this.clearHTML(contentImg);
 
@@ -94,6 +95,7 @@ class UI{
              contentImg.appendChild(newImg)
 
       })
+      sincStorage();
     }
 
     clearHTML(contentArtist){
@@ -189,13 +191,18 @@ if (loginFormElement) {
 function eventListeners() {
   formArtist.addEventListener("submit", uploadArtist);
   formImg.addEventListener('submit', uploadImg)
+
+  document.addEventListener("DOMContentLoaded", () =>{
+    imgList = JSON.parse(localStorage.getItem('imgList')) || [];
+    artistList = JSON.parse(localStorage.getItem('artistList')) || [];
+    ui.addHTMLArtist();
+    ui.addHTMLImg()
+  })
 }
 
 function uploadImg(e){
   e.preventDefault();
-  if(window.localStorage.getItem('imgList')){
-    imgList = JSON.parse(localStorage.getItem('imgList'));
-  }
+
   const title = document.querySelector('#titleImage').value
   const alter = document.querySelector('#alterImg').value
   const imgFile = document.querySelector("#imgImg").files[0];
@@ -206,34 +213,40 @@ function uploadImg(e){
   
   imgList = [...imgList, image]
 
-  let imgListLS = JSON.stringify(imgList);
-  localStorage.setItem('imgList', imgListLS);
-  ui.addImg();
+
+  ui.addHTMLImg();
   formImg.reset();
 }
 
 function uploadArtist(e) {
   e.preventDefault();
-  if(window.localStorage.getItem('artistList')){
-    imgList = JSON.parse(localStorage.getItem('artistList'));
-  }
+ 
   //Obtengo Datos del form
   const name = document.querySelector("#nameArtist").value;
   const spotify = document.querySelector("#spotifyArtist").value;
   const description = document.querySelector("#descriptionArtist").value;
   // Obtengo el file, creo un url para la imagen
   const imgFile = document.querySelector("#imgArtist").files[0];
-  const imgUrl = URL.createObjectURL(imgFile);
   const id = Date.now();
 
-  const artist = new Artist(name, spotify, imgUrl, description, id);
+
+
+  const artist = new Artist(name, spotify, null, description, id);
+
+
+  const reader = new FileReader();
+  reader.addEventListener('load', ()=>{
+    const imgData = reader.result;
+    this.artist.img = imgData;
+  })
+
+
+  reader.readAsDataURL(imgFile);
+  
 
   artistList = [...artistList, artist];
 
-  let artistListLS = JSON.stringify(artistList);
-  localStorage.setItem('imgList', artistListLS);
-
-  ui.addArtist();
+  ui.addHTMLArtist();
   console.log(artistList);
   formArtist.reset()
 }
@@ -241,17 +254,22 @@ function uploadArtist(e) {
 
 function deleteArtist(id){
     artistList = artistList.filter(artist=> artist.id !== id)
-    ui.addArtist()
+    ui.addHTMLArtist()
 }
 
 function deleteImg(id){
 
     imgList = imgList.filter( img => img.id !== id)
-    ui.addImg()
+    ui.addHTMLImg()
+}
+
+function sincStorage(){
+  localStorage.setItem("artistList", JSON.stringify(artistList));
+  localStorage.setItem('imgList', JSON.stringify(imgList));
 }
 
 let artistList = [];
 let imgList = [];
 const ui = new UI();
-
+//localStorage.clear();
 eventListeners();
