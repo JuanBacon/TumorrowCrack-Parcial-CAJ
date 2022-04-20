@@ -8,7 +8,7 @@ let encrypt = true;
 let dencrypt = false;
 // localStorage.setItem("user","juan_die.bustamante@uao.edu.co")
 // localStorage.setItem("password", encryptPassword("cualquierContraseña1234!#",key,true))
-
+// m!kv{!so|Myx~|k}oñk;<=>+-
 // TODO: Clase artista: nombre, lista de spotify, imagen, perfil'Descripcion'
 // Clase Imagen: imagen, titulo, alt'texto alternativo'
 

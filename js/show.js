@@ -76,7 +76,11 @@ class UI {
       });
       sincStorage();
     }
-  
+    clearHTML(contentArtist) {
+      while (contentArtist.firstChild) {
+        contentArtist.removeChild(contentArtist.firstChild);
+      }
+    }
     
   }
 
@@ -85,9 +89,16 @@ class UI {
       imgList = JSON.parse(localStorage.getItem("imgList")) || [];
       artistList = JSON.parse(localStorage.getItem("artistList")) || [];
       console.log("entrando artist");
-      ui.addHTMLArtist();
-      console.log("entrando");
-      ui.addHTMLImg();
+      if(document.title == 'TumorrowCrack Artistas'){
+        ui.addHTMLArtist();
+
+      }
+      if(document.title == 'TumorrowCrack Galería'){
+       
+        console.log("entrando");
+        ui.addHTMLImg();
+      }
+     
     });
   }
   
