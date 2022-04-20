@@ -42,12 +42,23 @@ class UI {
       const { name, spotifyList, img, description, id } = artist;
 
       const newArtist = document.createElement("div");
+      newArtist.classList.add('contentDiv')
 
       newArtist.dataset.id = id;
 
-      newArtist.innerHTML = `${name} <br> ${spotifyList} <br> 
-               <br> ${description} <br> 
-               <img src="${img}" alt="" width = '200' heigh = '200'>  <br>`;
+      newArtist.innerHTML = `
+        <div class = 'divImg'>
+        <figure> <img src="${img}" alt="" width = '200' heigh = '200'>  <br></figure>
+        
+        </div>
+               `;
+
+      const artistInfo = document.createElement("div");
+      artistInfo.classList.add('artistInfo')
+
+      artistInfo.innerHTML = `      ${name} <br> ${spotifyList} <br> 
+      <br> ${description} <br> `
+
       const btnDelete = document.createElement("button");
       btnDelete.textContent = "borrar";
       btnDelete.onclick = () => {
@@ -59,9 +70,10 @@ class UI {
       btnEdit.onclick = () => {
         editArtist(artist);
       };
-      newArtist.appendChild(btnEdit);
-      newArtist.appendChild(btnDelete);
+      artistInfo.appendChild(btnEdit);
+      artistInfo.appendChild(btnDelete);
 
+      newArtist.appendChild(artistInfo)
       contentArtist.appendChild(newArtist);
     });
     sincStorage();
@@ -206,9 +218,8 @@ function uploadImg(e) {
   const id = Date.now();
   const reader = new FileReader();
 
-
   if (editingImg) {
-    document.querySelector("#submitbtnImg").value = 'Crear';
+    document.querySelector("#submitbtnImg").value = "Crear";
     const id = parseInt(document.querySelector("#idTmp").textContent);
     imgList.forEach((image) => {
       if (image.id == id) {
@@ -231,9 +242,6 @@ function uploadImg(e) {
 
   const image = new Img(null, title, alter, id);
 
-
-
-
   reader.addEventListener("load", () => {
     changeIMG(image, reader.result);
   });
@@ -255,7 +263,7 @@ function uploadArtist(e) {
   const id = Date.now();
 
   if (editingArtist) {
-    document.querySelector("#submitbtnArtist").value = 'Crear';
+    document.querySelector("#submitbtnArtist").value = "Crear";
     const id = parseInt(document.querySelector("#idTmp").textContent);
     artistList.forEach((artist) => {
       if (artist.id == id) {
@@ -276,8 +284,6 @@ function uploadArtist(e) {
     formArtist.reset();
     return;
   } else {
-    
-
     const artist = new Artist(name, spotify, null, description, id);
     reader.addEventListener("load", () => {
       console.log();
@@ -321,22 +327,20 @@ function editArtist(artistObj) {
   document.querySelector("#spotifyArtist").value = spotifyList;
   document.querySelector("#descriptionArtist").value = description;
   document.querySelector("#idTmp").textContent = id;
-  document.querySelector("#submitbtnArtist").value = 'Guardar';
+  document.querySelector("#submitbtnArtist").value = "Guardar";
   editingArtist = true;
 }
-
 
 function editImg(imgObj) {
   const { tittle, alt, id } = imgObj;
 
-   document.querySelector("#titleImage").value = tittle;
-   document.querySelector("#alterImg").value = alt;
+  document.querySelector("#titleImage").value = tittle;
+  document.querySelector("#alterImg").value = alt;
   document.querySelector("#idTmp").textContent = id;
 
-  document.querySelector("#submitbtnImg").value = 'Guardar';
+  document.querySelector("#submitbtnImg").value = "Guardar";
   editingImg = true;
 }
-
 
 let artistList = [];
 let imgList = [];

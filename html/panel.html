@@ -4,56 +4,59 @@
     <meta charset="UTF-8" />
 
     <title>TumorrowCrack Admin Panel</title>
+
+    <link rel="stylesheet" href="../css/panel.css" />
   </head>
   <body>
-
     <p id="idTmp" hidden></p>
-    <form id="formArtist" action="">
-      <label for="nameArtist">Nombre:</label>
-      <input id="nameArtist" type="text" name="name" />
-      <br />
-      <label for="descriptionArtist">Descripcion:</label>
-      <input id="descriptionArtist" type="text" name="description" />
-      <br />
-      <label for="spotifyArtist">SportyLink:</label>
-      <input id="spotifyArtist" type="text" name="spotify" />
-      <br />
-      <label for="imgArtist"> Imagen</label>
-      <input
-        type="file"
-        name="image"
-        id="imgArtist"
-        accept="image/png, image/jpeg"
-      />
-      <br />
-      <input id="submitbtnArtist" type="submit" value="Crear" />
-    </form>
 
-    
+    <section id= "forms">
+      <form id="formArtist" action="">
+        <h1>Añade los artistas</h1>
+        <label for="nameArtist">Nombre:</label>
+        <input id="nameArtist" type="text" name="name" />
+        <br />
+        <label for="descriptionArtist">Descripcion:</label>
+        <input id="descriptionArtist" type="text" name="description" />
+        <br />
+        <label for="spotifyArtist">SportyLink:</label>
+        <input id="spotifyArtist" type="text" name="spotify" />
+        <br />
+        <label for="imgArtist"> Imagen</label>
+        <input
+          type="file"
+          name="image"
+          id="imgArtist"
+          accept="image/png, image/jpeg"
+        />
+        <br />
+        <input id="submitbtnArtist" type="submit" value="Crear" />
+      </form>
 
-    <form id="formImg" action="">
-      <label for="titleImage">Titulo Imagen:</label>
-      <input id="titleImage" type="text" name="description" />
-      <br />
-      <label for="alterImg">Alter Text:</label>
-      <input id="alterImg" type="text" name="spotify" />
-      <br />
-      <label for="imgImg"> Imagen</label>
-      <input
-        type="file"
-        name="image"
-        id="imgImg"
-        accept="image/png, image/jpeg"
-      />
-      <br />
-      <input id="submitbtnImg" type="submit" value="Save" />
-    </form>
+      <form id="formImg" action="">
+        <h1>Añade las imagenes</h1>
+        <label for="titleImage">Titulo Imagen:</label>
+        <input id="titleImage" type="text" name="description" />
+        <br />
+        <label for="alterImg">Alter Text:</label>
+        <input id="alterImg" type="text" name="spotify" />
+        <br />
+        <label for="imgImg"> Imagen</label>
+        <input
+          type="file"
+          name="image"
+          id="imgImg"
+          accept="image/png, image/jpeg"
+        />
+        <br />
+        <input id="submitbtnImg" type="submit" value="Save" />
+      </form>
+    </section>
 
-    <div id="divArtist" style="display: flex; flex-wrap: wrap">
-      <section id="contentArtist" style="width: 40%"></section>
-      <section id="contentImg" style="width: 40%"></section>
-      
-    </div>
+    <main id="mainContent" style="display: flex; flex-wrap: wrap">
+      <section id="contentArtist" ></section>
+      <section id="contentImg" ></section>
+    </main>
 
     <script src="../js/app.js"></script>
   </body>
