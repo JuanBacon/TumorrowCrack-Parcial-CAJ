@@ -193,7 +193,9 @@ function eventListeners() {
 
 function uploadImg(e){
   e.preventDefault();
-  
+  if(window.localStorage.getItem('imgList')){
+    imgList = JSON.parse(localStorage.getItem('imgList'));
+  }
   const title = document.querySelector('#titleImage').value
   const alter = document.querySelector('#alterImg').value
   const imgFile = document.querySelector("#imgImg").files[0];
@@ -201,13 +203,20 @@ function uploadImg(e){
   const id = Date.now();
   const image = new Img(imgUrl, title, alter, id)
 
+  
   imgList = [...imgList, image]
 
+  let imgListLS = JSON.stringify(imgList);
+  localStorage.setItem('imgList', imgListLS);
   ui.addImg();
+  formImg.reset();
 }
 
 function uploadArtist(e) {
   e.preventDefault();
+  if(window.localStorage.getItem('artistList')){
+    imgList = JSON.parse(localStorage.getItem('artistList'));
+  }
   //Obtengo Datos del form
   const name = document.querySelector("#nameArtist").value;
   const spotify = document.querySelector("#spotifyArtist").value;
@@ -221,6 +230,8 @@ function uploadArtist(e) {
 
   artistList = [...artistList, artist];
 
+  let artistListLS = JSON.stringify(artistList);
+  localStorage.setItem('imgList', artistListLS);
 
   ui.addArtist();
   console.log(artistList);
