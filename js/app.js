@@ -65,7 +65,7 @@ class UI {
 
       const btnDelete = document.createElement("button");
       btnDelete.classList.add('button-delete')
-      btnDelete.textContent = "borrar";
+      btnDelete.textContent = "Borrar";
       btnDelete.onclick = () => {
         deleteArtist(id);
       };
@@ -122,7 +122,7 @@ class UI {
 
       const btnDelete = document.createElement("button");
       btnDelete.classList.add('button-delete')
-      btnDelete.textContent = "borrar";
+      btnDelete.textContent = "Borrar";
       btnDelete.onclick = () => {
         deleteImg(id);
       };
@@ -293,6 +293,7 @@ function uploadArtist(e) {
   const spotify = document.querySelector("#spotifyArtist").value;
   const description = document.querySelector("#descriptionArtist").value;
   const imgFile = document.querySelector("#imgArtist").files[0];
+  
   const reader = new FileReader();
   const id = Date.now();
 
