@@ -9,7 +9,7 @@
     <title>TumorrowCrack Home</title>
 </head>
 
-<body>
+<body onload="updateTest()">
     
     <header id="header">
         <a href="../html/index.html#heroContent" id="logoImglink"><img id="logoImg" src="../assets/img/logo/logo_tomorrocrack_white.png" alt="Logo"></a>
@@ -97,17 +97,27 @@
         </section>
         <section class="sectionPage form" id="test">
             <h2>¿CUANTO SABES DEL FESTIVAL?</h2>
-            <form action="#pricing">
-                <div id="pregunta1"></div>
-                <div id="pregunta2"></div>
-                <div id="pregunta3"></div>
-                <div id="pregunta4"></div>
-                <div id="pregunta5"></div>
-                <div id="pregunta6"></div>
-                <div id="pregunta7"></div>
-                <div id="pregunta8"></div>
-                <div id="pregunta9"></div>
-                <div id="pregunta10"></div>
+            <div id="myProgress">
+                <div id="myBar"></div>
+            </div>
+            <form action="#pricing" onclick="updateTest()">
+                
+                <p>Como se llama el festival:</p>
+                    <input class="formAnswer" type="radio" id="name1" name="one" value="w" ">
+                    <label for="tere">Teres Festival</label>
+                    <br>
+                    <input class="formAnswer" type="radio" id="name2" name="one" value="r">
+                    <label for="land">TomorrowLand</label><br>
+                    <input class="formAnswer" type="radio" id="name3" name="one" value="w">
+                    <label for="crack">TomorrowCrack</label><br>
+                <p>Cuando se celebra el festival:</p>
+                    <input class="formAnswer" type="radio" id="name1" name="two" value="w" ">
+                    <label for="tere">Teres Festival</label>
+                    <br>
+                    <input class="formAnswer" type="radio" id="name2" name="two" value="r">
+                    <label for="land">TomorrowLand</label><br>
+                    <input class="formAnswer" type="radio" id="name3" name="two" value="w">
+                    <label for="crack">TomorrowCrack</label><br>
                 <input type="submit" value="TERMINADO" id="submit">
             </form>
         </section>
