@@ -5,36 +5,32 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/animations.css">
-    <title>TomorrowCrack Home</title>
+    <title>me</title>
     <link rel="stylesheet" href="../css/5artists.css">
     <!-- ICONOS GOOGLE -->	
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 </head>
 
 <body>
-    <!-- CAMBIAR EL MENU DEL HEADER -->
+    <!-- NEW HEADER -->
     <header id="header">
-
-        <a href="#description" class="menuButtonLeft">
+        <a href="../html/index.html#heroContent" id="logoImglink"><img id="logoImg" src="../assets/img/logo/logo_tomorrocrack_white.png" alt="Logo"></a>
+        <a href="../html/index.html#description" class="menuButton">
             <p>PROGRAMACION</p>
         </a>
-        <a href="#spotifyList" class="menuButtonLeft">
-            <p>VER MAS</p>
+        <a href="../html/index.html#seemore" class="menuButton">
+            <p>VER MÁS</p>
         </a>
-        <a href="#pricing" class="menuButtonLeft">
+        <a href="../html/index.html#pricing" class="menuButton">
             <p>COMPRA</p>
         </a>
-        <a href="#heroContent"><img id="logoImg" src="../assets/img/logo.png" alt="Logo"></a>
-        <a href="#form" class="menuButtonRight">
+        <a href="../html/index.html#form" class="menuButton">
             <p>TEST</p>
         </a>
-        <a href="#partners" class="menuButtonRight">
+        <a href="../html/index.html#partners" class="menuButton">
             <p>PATROCINADORES</p>
         </a>
-        <a href="#footer" class="menuButtonRight">
-            <p>INFORMACIÓN</p>
-        </a>
-
+        <a href="../html/login.html" class="menuButton" id="loginLink"><p>Iniciar sesión</p></a>
     </header>
 
     <main id="container">
@@ -82,17 +78,18 @@
                 <div class="card__text">
                     <p class="card__title">TWENTY ONE PILOTS</p>
                 </div>
-                <script  src="../js/script.js"></script>
+                
             </div>
             <!-- FIN DE 5 ARTÍSTAS -->
+            <script  src="../js/script.js"></script>
             </section>
 
         <!-- CAMBIAR Y/O QUITAR SECCION DE PROGRAMACION -->
         <!-- ✔️ -->
         <section class="sectionPage" id="description">
-            <h2 class="descriptionTittle">¡ÉSTE 17, 18 Y 19 DE JUNIO DEL 2022!</h2>
+            <h2 class="descriptionTittle">¡ESTE 17 DE JUNIO DEL 2022!</h2>
 
-            <p class="note">El mejor evento tipo festival de música crossover del país, con música Rock, Trap, Reggaeton, Pop y Mucho más llegó con: <br> <b>Los más TOP de la industria</b> / <b>Servicio de Parqueadero y Confitería</b> / <b>10 patrocinadores del evento</b></p>
+            <p class="note">El mejor evento tipo festival de música crossover del país, con música Rock, Trap, Reggaeton, Pop y Mucho más ya llegó con: <br> <b>Grandes Artistas</b> / <b>Servicio de Parqueadero y Confitería</b> / <b>10 patrocinadores del evento</b></p>
 
         
 
@@ -119,28 +116,29 @@
             </div>
         </section>
 
-        
-        <!-- CAMBIAR Y/O QUITAR SECCION DE LISTA DE SPOTIFY -->
-        <!-- ✔️ -->
-        <section class="sectionPage" id="pricing">
-            <h2> PRECIOS</h2>
-            <div id="pricingContent">
-                <div>
-                    <h3>FILAS PREMIUM</h3>
-                    <p>1'000.000 COP</p>
-                </div>
-                <div>
-                    <h3>FILAS GOLD</h3>
-                    <p>800.000 COP</p>
-                </div>
-                <div>
-                    <h3>FILAS SILVER</h3>
-                    <p>600.000 COP</p>
-                </div>
-            </div>
-            <button class="btntrivia">JUGAR TRIVIA</button>
+        <!-- ARTÍSTAS -->
+        <section class="sectionPage" id="seemore">
+            <h2>¡CONOCE A NUESTROS INVITADOS!</h2>
+            <img src="../assets/img/page/pexels-david-yu-1749822.jpg" alt="concert" height="200px" width="400px">
+            <button onclick="window.location.href='../html/artist.html'">CONOCER ARTISTAS</button>
+
         </section>
-        <!-- CAMBIAR LA SECCION DE RESERVA POR EL TEST Y LA COMPRA DE LAS BOLETAS -->
+        <!-- GALERÍA -->
+        <section class="sectionPage" id="img">
+            <h2>¡REVIVE LOS FESTIVALES PASADOS!</h2>
+            <img src="../assets/img/page/concert2.jpeg" alt="concert" height="200px" width="400px">
+            <button onclick="window.location.href='../html/gallery.html'">VER GALERÍA</button>
+        </section>
+
+        <section class="sectionPage" id="pricing">
+            <h2>¡COMPRA AHORA TUS BOLETAS!</h2>
+            <div id="pricingContent">
+                <p>No pierdas la oportunidad de vivir la mejor experiencia musical de tu vida.</p>
+                <br>
+                <button onclick="window.location.href='../html/buy.html'">COMPRAR AHORA</button>
+            </div>
+        </section>
+
         <section class="sectionPage" id="form">
             <h2>¿QUÉ TANTO CONOCES A TUS ARTÍSTAS FAVORITOS?</h2>
             <p>Completa éste juego de preguntas sobre tus artístas favoritos y gana el 50% de descuento si logras un puntaje de 100!</p>
@@ -183,8 +181,10 @@
                 <input type="submit" value="COMPRAR" id="submit">
             </form>
         </section>
+
+        <!-- PATROCINADORES -->
         <section class="sectionPage" id="partners">
-            <h2>PATROCINA:</h2>
+            <h2>PATROCINADO POR:</h2>
             <div>
                 <img src="../assets/img/Beats.png" alt="" height="100px" width="100px">
                 <img src="../assets/img/spotify.png" alt="" height="100px" width="100px">
@@ -206,13 +206,10 @@
     <footer id="footer-index">
         <div class="opacity"></div>
         <div style="position: absolute; left: 50%; transform: translate(-50%,-50%); top: 50%; text-align: center; z-index: 2;">
-            <img style="width: 400px;" src="../assets/img/logo.png" alt="" srcset="">
+            <img style="width: 400px;" src="../assets/img/logo/logo_tomorrocrack_white.png" alt="" srcset="">
             <ul style="list-style-type: none;">
                 <li>
-                    © RASEC S.A.S | TOMORROW CRACK
-                </li>
-                <li style="text-decoration: underline; color:blue;">
-                    Términos y Condiciones
+                    © RASEC S.A.S
                 </li>
                 <li>
                 <span class="material-icons">room</span><p>Cali, Valle del Cauca, Colombia</p>
@@ -220,6 +217,9 @@
                 <li>
                     <p>Realizada por: Juan Bustamante - Camilo Reyes - Abdiel Arias</p>
                     <p>Esta página se realiza para fines meramente académicos, los derechos de las canciones pertenecen a sus respectivos autores.</p>
+                </li>
+                <li style="text-decoration: underline; color:rgb(0, 255, 128);">
+                    Términos y Condiciones
                 </li>
             </ul>
             
@@ -236,15 +236,6 @@
     </div>
 
     <script src="../js/index.js"></script>
-<!--     <footer id="footer">
-        <h2>TOMORROW CRACK</h2>
-        <span><a href="https://www.instagram.com/juan.bacon/" target="_blank"><img src="../assets/img/instagram.png" alt="instagram" height="20px" width="20px"></a> <a href="https://www.facebook.com/profile.php?id=100001325814967" target="_blank"><img src="../assets/img/facebook.png" alt="facebook" height="20px" width="20px"></a> <a href="https://open.spotify.com/user/juandiegob15" target="_blank"><img src="../assets/img/spotify.png" alt="spotify" height="20px" width="20px"></a></span>
-        <p>©Copyright: todos los derechos reservados 2022</p>
-        <p>Realizada por Juan Diego Bustamante</p>
-        <p>Esta página se realiza para fines meramente académicos, los derechos de las canciones pertenecen a sus respectivos autores</p>
-        <p>Terminos y condiciones</p>
-        <img src="../assets/img/logo.png" alt="logo" height="38px" width="120px">
-    </footer> -->
 </body>
 
 </html>

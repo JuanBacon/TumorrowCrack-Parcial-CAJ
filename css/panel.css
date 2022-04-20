@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+  background-color: #1d1d1d;
+  height: 100vh;
+}
+
+#forms{
+    display: flex;
+
+    margin: 40px;
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+    border:  4px white solid ;
+
+}
+
+#adminArtists , #adminGallery{
+
+    width: 50%;
+}
+
+
+#mainContent{
+    display: flex;
+    margin: 40px;
+    padding: 30px;
+    background: gray;
+    border-radius: 8px;
+    border:  4px gray solid ;
+    width: 100%;
+}
+
+#contentArtist, #contentImg{
+
+    width: 50%;
+}
+
+#contentArtist .contentDiv ,#contentImg .contentDiv  {
+
+    display: flex;
+    margin: 20px;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    height: 300px ;
+}
+
+#seeAdded{
+
+    display: flex;
+    align-items: center;
+   
+}
+
+.divImg{
+    display: flex;
+    align-items: center;
+}
+
+.nameArtist{
+
+    color: black;
+    font-size: 40px;
+}
+
+.divImg figure img{
+
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+.artistInfo{
+margin: 20px;
+
+}
+
+#contentArtist h2, #contentImg h2{
+
+    margin-left: 28px;
+
+}
+
+.button-delete{
+
+ background-color: red;
+}
+
+.button-delete{
+
+    color: aliceblue;
+   }
+
+   #guardadosTitle{
+       text-align: center;
+   }

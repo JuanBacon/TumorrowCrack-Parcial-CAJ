@@ -1,114 +1,108 @@
 @keyframes flicker {
     
-    0%, 18%, 22%, 25%, 53%, 57%, 100% {
-  
-        text-shadow:
-        0 0 7px #fff,
-        0 0 21px #fff,
-        0 0 42px #b93d46,
-        0 0 82px #91498e,
-        0 0 151px #b93d46;
-    
-    }
-    
-    20%, 24%, 55% {        
-        text-shadow: none;
-    }    
-  }
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
 
-  @keyframes flickerBox {
-    
-    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      text-shadow:
+      0 0 7px #fff,
+      0 0 21px #fff,
+      0 0 42px #b93d46,
+      0 0 82px #91498e,
+      0 0 151px #b93d46;
   
-        box-shadow:
-        0 0 7px #fff,
-        0 0 21px #fff,
-        0 0 42px #b93d46,
-        0 0 82px #91498e,
-        0 0 151px #b93d46;
-    
-    }
-    
-    20%, 24%, 55% {        
-        box-shadow: none;
-    }    
   }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }    
+}
+
+@keyframes flickerBox {
+  
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+      box-shadow:
+      0 0 7px #fff,
+      0 0 21px #fff,
+      0 0 42px #b93d46,
+      0 0 82px #91498e,
+      0 0 151px #b93d46;
+  
+  }
+  
+  20%, 24%, 55% {        
+      box-shadow: none;
+  }    
+}
 
 
 @keyframes scaler {
-  0%, 50%, 100% {
-    transform: scale(1.2, 1.2);
-  }
-
-  25%, 75% {
-    transform: scale(1,1);
-  }
+0%, 50%, 100% {
+  transform: scale(1.1, 1.1);
 }
 
-    .sectionPage:hover{
-        filter: brightness(1);
-        transition: all 0.2s ease;
+25%, 75% {
+  transform: scale(1,1);
+}
+}
 
-    }
-
-  .menuButtonRight p {
-    opacity: 1;
-    transition: all 0.4s ease;
-    transform: translateX(10px);
-  }
-  .menuButtonLeft p {
-    opacity: 1;
-    transition: all 0.4s ease;
-    transform: translateX(-10px);
-  }
-  
-
-
-  .backToTop:hover {
-    transform: scale(1.2, 1.2);
+.sectionPage:hover{
+    filter: brightness(1);
     transition: all 0.2s ease;
-  }
 
-  #header a:hover {
-    text-shadow:
-    0 0 7px #fff,
-    0 0 21px #fff,
-    0 0 42px #b93d46,
-    0 0 90px #b93d46,
-    0 0 15px #b93d46;
-  }
-  #logoImg:hover{
-    filter: drop-shadow(0px 0px 5px #b93d46);
-    transition: all 0.2s ease;
-  }
+}
 
-  .column:hover{
-    transform: scale(1.2, 1.2);
-    transition: all 0.2s ease;
-  }
+.backToTop:hover {
+  transform: scale(1.2, 1.2);
+  transition: all 0.2s ease;
+}
 
-  #form form input:hover{
-    transform: scale(1.05, 1.05);
-    transition: all 0.5s ease;
-  }
-  #form form #submit:hover{
-    background-color: #348888;
-    color: #fff;
-  }
 
-  #success form #back:hover{
-    background-color: #348888;
-    transform: scale(1.05, 1.05);
-    transition: all 0.5s ease;
-    color: #fff;
-  }
+#header a p:hover {
+  transform: scale(1.1,1.1);
+  transition: all 0.2s ease;
+}
+#logoImg:hover{
+  filter: drop-shadow(0px 0px 5px #b93d46);
+  transform: scale(1.4, 1.4);
+  transition: all 0.2s ease;
+}
 
-  #pricingContent div:hover{
-    transform: scale(1.1, 1.1);
-    text-shadow:
-    0 0 7px #fff,
-    0 0 21px #fff,
-    0 0 42px #b93d46,
-    0 0 15px #b93d46;
-    transition: all 0.5s ease;
-  }
+.column:hover{
+  transform: scale(1.2, 1.2);
+  transition: all 0.2s ease;
+}
+
+.form form input:hover{
+  transform: scale(1.05, 1.05);
+  transition: all 0.5s ease;
+}
+.form form #submit:hover{
+  background-color: #348888;
+  color: #fff;
+}
+
+#success form #back:hover{
+  background-color: #348888;
+  transform: scale(1.05, 1.05);
+  transition: all 0.5s ease;
+  color: #fff;
+}
+
+#pricingContent div:hover{
+  transform: scale(1.1, 1.1);
+  text-shadow:
+  0 0 7px #fff,
+  0 0 21px #fff,
+  0 0 42px #b93d46,
+  0 0 15px #b93d46;
+  transition: all 0.5s ease;
+}
+button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+button:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}

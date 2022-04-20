@@ -1,0 +1,16 @@
+
+#contentArtist{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.contentDiv{
+    background-color: #E1E1E1;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px black;
+
+}
