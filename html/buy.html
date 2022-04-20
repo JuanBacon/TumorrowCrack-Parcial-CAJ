@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/animations.css">
     <link rel="icon" href="../assets/img/logo/logo_tomorrocrack_square.png">
-    <title>TumorrowCrack Artistas</title>
+    <title>TumorrowCrack Comprar</title>
 </head>
 
 <body>
@@ -32,8 +32,35 @@
     </header>
 
     <main id="container">
-        <section class="sectionPage" id="seeArtists">
-            <h1>¡NUESTROS ARTISTAS INVITADOS!</h1>
+        <section class="sectionPage form">
+            <h2>¡COMPRA TUS ENTRADAS!</h2>
+            <form action="./submit.html#success">
+                <label for="name"> NOMBRE</label>
+                <br>
+                <input type="text" id="name" placeholder="Tu nombre" required pattern="[A-Za-z]{1,32}">
+                <br>
+                <label for="lastname"> APELLIDO</label>
+                <br>
+                <input type="text" id="lasname" placeholder="Tu Apellido" required pattern="[A-Za-z]{1,32}">
+                <br>
+                <label for="tel">TELÉFONO</label>
+                <br>
+                <input type="tel" id="phone" name="phone" placeholder="1234567890" pattern="[0-9]{10}" required>
+                <br>
+                <label for="email">CORREO ELECTRÓNICO</label>
+                <br>
+                <input type="email" name="email" id="email" placeholder="alguien@example.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <br>
+                <label for="days">CODIGO DE DESCUENTO</label>
+                <br>
+                <input type="text" name="code" id="code" placeholder="ABCDEFGHIJK" >
+                <br>
+                <label for="entrys">NUMERO DE ENTRADAS</label>
+                <br>
+                <input type="number" name="entrys" id="entrys" min="1" max="10" placeholder="1" required>
+                <br>
+                <input type="submit" value="COMPRAR" id="submit">
+            </form>
         </section>
     </main>
     <footer id="footer">

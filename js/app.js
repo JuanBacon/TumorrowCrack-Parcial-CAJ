@@ -120,13 +120,13 @@ if (loginFormElement) {
     //validar contraseña y usuario
     if (mypassword === localpassword && myuser === localuser) {
       // inicio de sesion correcto
-      alert("Correct log in");
+      // alert("Correct log in");
       loginFormElement.reset();
       loginFormElement.action = "../html/panel.html";
       loginFormElement.submit();
     } else {
       // inicio de sesion incorrecto
-      alert("Incorrect data");
+      alert("Información incorrecta");
       loginFormElement.reset();
     }
   });
