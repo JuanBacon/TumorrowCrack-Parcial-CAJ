@@ -51,22 +51,18 @@
 
     }
 
-  header:hover > .menuButtonRight p {
+  .menuButtonRight p {
     opacity: 1;
     transition: all 0.4s ease;
     transform: translateX(10px);
   }
-  header:hover > .menuButtonLeft p {
+  .menuButtonLeft p {
     opacity: 1;
     transition: all 0.4s ease;
     transform: translateX(-10px);
   }
   
-  header:hover  #logoImg {
-    transform: scale(1.4, 1.4);
-    transition: all 0.2s ease;
 
-  }
 
   .backToTop:hover {
     transform: scale(1.2, 1.2);

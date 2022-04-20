@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <title>Crossover Festival</title>
+</head>
+<body>
+
+    <header id="header">
+        
+        <a href="#description" class="menuButtonLeft"><p>PROGRAMACION</p></a>
+        <a href="#spotifyList" class="menuButtonLeft"><p>SPOTIFY</p></a>
+        <a href="#pricing" class="menuButtonLeft"><p>PRECIOS</p></a>
+        <a href="#heroContent" ><img id="logoImg" src="../assets/img/logo.png" alt="Logo"></a>
+        <a href="#form" class="menuButtonRight"><p>RESERVA</p></a>
+        <a href="#partners" class="menuButtonRight"><p>PATROCINADORES</p></a>
+        <a href="#footer" class="menuButtonRight"><p>INFORMACIÓN</p></a>
+
+    </header>
+
+    <main id="container">
+        <section class="sectionPage" id="heroContent"> 
+            <video playsinline autoplay muted loop>
+                <source src="../assets/video/pexels-alena-darmel-7722221.mp4" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            <div id="heroContentText">
+                <h1>TERE'S CROSSOVER FESTIVAL</h1>
+                <p>EL MEJOR FESTIVAL CROSSOVER DEL PAÍS</p>    
+            </div>
+
+            
+        </section>
+        <section class="sectionPage" id="description">
+            <h2 class="descriptionTittle">¡ESTE 17, 18 Y 19 DE JUNIO DEL 2022!</h2>
+            <div class="row">
+                <div class="column">
+                    <h1>VIERNES 17</h1>
+                    <h3>BAD BUNNY</h3>
+                    <p>PISO 21</p>
+                    <p>SEAN PAUL</p>
+                    <p>LMFAO</p>
+                    <p>MARSHMELLO</p>
+                    <p>JUSTIN BIEBER</p>
+                    <p>AVICCI</p>
+                </div>
+                <div class="column">
+                    <h1>SÁBADO 18</h1>
+                    <H3>IMAGINE DRAGONS</H3>
+                    <p>MANESKIN</p>
+                    <p>COLDPLAY</p>
+                    <p>THE CHAINSMOKERS</p>
+                    <p>ONE REPUBLIC</p>
+                    <p>SIA</p>
+                    <p>WILL I AM</p>
+
+                </div>
+                <div class="column">
+                    <h1>DOMINGO 19</h1>
+                    <h3>BBN0$</h3>
+                    <p>DABABBY</p>
+                    <p>LIL NASX</p>
+                    <p>EMINEM</p>
+                    <p>BILLIE ELLISH</p>
+                    <p>POST MALONE</p>
+                    <p>DRAKE</p>
+                    <p>TWENTY ONE PILOTS</p>
+                </div>
+            </div>
+
+            <P class="note">El mejor evento tipo festival de música crossover del país, con música Rock, Trap, Reggaeton, Pop y Mucho más ya llegó con: <br> <b>Más de 20 Artistas</b> / <b>Servicio de Parqueadero y Confitería</b> / <b>10 patrocinadores del evento</b></P>
+            
+
+            <h3 class="site">Ubicado en el Autocine, en la vía Panamericana</h3>
+            <div class="mapouter"><div class="gmap_canvas"><iframe width="527" height="288" id="gmap_canvas" src="https://maps.google.com/maps?q=Cali,%20autocine%20piedra%20grande&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123 movies</a><br><style>.mapouter{position:relative;text-align:right;height:288px;width:527px;}</style><a href="https://www.embedgooglemap.net">embed google map html</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:288px;width:527px;}</style></div></div>        </section>
+        <section class="sectionPage" id="spotifyList">
+            <h2>¡ESCUCHA A NUESTROS INVITADOS!</h2>
+            <iframe style="border-radius:10px; margin: 10px;" src="https://open.spotify.com/embed/playlist/1NGPLn9EFussPNw2hs4zsv?utm_source=generator&theme=0" width="95%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>        </section>
+        <section class="sectionPage" id="img">
+            <img src="../assets/img/concert2.jpeg" alt="concert" height="200px" width="400px">
+        </section>
+        <section class="sectionPage" id="pricing">
+            <h2> PRECIOS</h2>
+            <div id="pricingContent">
+                <div>
+                    <h3>PARA UN DÍA</h3>
+                    <p>300.000 COP</p>
+                </div> 
+                <div>
+                    <h3>PARA DOS DÍAS</h3>
+                    <p>500.000 COP</p>
+                </div>
+                <div>
+                    <h3>PARA TRES DÍAS</h3>
+                    <p>650.000 COP</p>
+                </div>
+            </div>
+        </section>
+        <section class="sectionPage" id="form">
+            <h2>¡RESERVA YA TUS ENTRADAS!</h2>
+            <form action="./submit.html#success">
+                    <label for="name"> NOMBRE</label>
+                    <br>
+                    <input type="text" id="name" placeholder="Tu nombre" required pattern="[A-Za-z]{1,32}">
+                    <br>
+                    <label for="lastname"> APELLIDO</label>
+                    <br>
+                    <input type="text" id="lasname" placeholder="Tu Apellido" required pattern="[A-Za-z]{1,32}">
+                    <br>
+                    <label for="tel">TELÉFONO</label>
+                    <br>
+                    <input type="tel" id="phone" name="phone" placeholder="1234567890" pattern="[0-9]{10}" required>
+                    <br>
+                    <label for="email">CORREO ELECTRÓNICO</label>
+                    <br>
+                    <input type="email" name="email" id="email" placeholder="alguien@example.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                    <br>
+                    <label for="days">NUMERO DE DÍAS</label>
+                    <br>
+                    <input type="number" name="days" id="days" min="1" max="3" placeholder="1" required>
+                    <br>
+                    <label for="entrys">NUMERO DE ENTRADAS</label>
+                    <br>
+                    <input type="number" name="entrys" id="entrys" min="1" max="10" placeholder="1" required>
+                    <br>
+                    <input type="submit" value="RESERVAR" id="submit">
+            </form>
+        </section>
+        <section class="sectionPage" id="partners">
+            <h2>PATROCINA:</h2>
+            <div>
+                <img src="../assets/img/Beats.png" alt="" height="100px" width="100px">
+                <img src="../assets/img/spotify.png" alt="" height="100px" width="100px">
+                <img src="../assets/img/mcdonalds.png" alt="" height="100px" width="100px">
+                <img src="../assets/img/coca.png" alt="" height="100px" width="100px">
+                <img src="../assets/img/corona.png" alt="" height="100px" width="100px">
+                <br>
+                <img src="../assets/img//logo-Sony.png" alt="" height="100px" width="100px">
+                <img src="../assets/img/soundcloud-icon.png" alt="" height="100px" width="100px">
+                <img src="../assets/img/tdt.png" alt="" height="100px" width="100px">
+                <img src="../assets/img/Logo_UAO.png" alt="" height="100px" width="100px">
+                <img src="../assets/img/Sprite-Logo.png" alt="" height="100px" width="100px">
+            </div>
+            
+        </section>
+    </main>
+    <footer id="footer">
+        <h2>TERE'S FESTIVAL</h2>
+        <span><a href="https://www.instagram.com/juan.bacon/" target="_blank"><img src="../assets/img/instagram.png" alt="instagram" height="20px" width="20px"></a> <a href="https://www.facebook.com/profile.php?id=100001325814967" target="_blank"><img src="../assets/img/facebook.png" alt="facebook" height="20px" width="20px"></a> <a href="https://open.spotify.com/user/juandiegob15" target="_blank"><img src="../assets/img/spotify.png" alt="spotify" height="20px" width="20px"></a></span>
+        <p>©Copyright: todos los derechos reservados 2022</p>
+        <p>Realizada por Juan Diego Bustamante</p>
+        <p>Esta página se realiza para fines meramente académicos, los derechos de las canciones pertenecen a sus respectivos autores</p>
+        <p>Terminos y condiciones</p>
+        <img src="../assets/img/logo.png" alt="logo" height="38px" width="120px">
+    </footer>
+
+    <div>
+        <a href="#heroContent"><img src="../assets/img/arrow.png" alt="back to top" class="backToTop"></a>
+    </div>
+    
+</body>
+</html>
