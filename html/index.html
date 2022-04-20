@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="../css/animations.css">
     <link rel="icon" href="../assets/img/logo/logo_tomorrocrack_square.png">
     <title>TumorrowCrack Home</title>
+    <link rel="stylesheet" href="../css/5artists.css">
+    <!-- ICONOS GOOGLE -->	
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 </head>
 
 <body onload="updateTest()">
-    
+    <!-- NEW HEADER -->
     <header id="header">
         <a href="../html/index.html#heroContent" id="logoImglink"><img id="logoImg" src="../assets/img/logo/logo_tomorrocrack_white.png" alt="Logo"></a>
         <a href="../html/index.html#description" class="menuButton">
@@ -121,8 +124,10 @@
                 <input type="submit" value="TERMINADO" id="submit">
             </form>
         </section>
+
+        <!-- PATROCINADORES -->
         <section class="sectionPage" id="partners">
-            <h3>PATROCINA:</h3>
+            <h2>PATROCINADO POR:</h2>
             <div>
                 <img src="../assets/img/patreons/Beats.png" alt="" height="100px" width="100px">
                 <img src="../assets/img/patreons/spotify.png" alt="" height="100px" width="100px">
@@ -136,16 +141,36 @@
                 <img src="../assets/img/patreons/Logo_UAO.png" alt="" height="100px" width="100px">
                 <img src="../assets/img/patreons/Sprite-Logo.png" alt="" height="100px" width="100px">
             </div>
-
         </section>
+        
     </main>
-    <footer id="footer">
-        <h3>TOMORROWCRACK'S FESTIVAL</h3>
-        <p>©Copyright: todos los derechos reservados 2022</p>
-        <p>Realizada por Juan Diego Bustamante - Camilo Reyes - Abdiel Arias</p>
-        <p>Esta página se realiza para fines meramente académicos, los derechos de las canciones pertenecen a sus respectivos autores</p>
-        <p>Terminos y condiciones</p>
-        <img src="../assets/img/logo/logo_tomorrocrack_white.png" alt="logo" height="38px" width="120px">
+    
+    <footer id="footer-index">
+        <div class="opacity"></div>
+        <div style="position: absolute; left: 50%; transform: translate(-50%,-50%); top: 50%; text-align: center; z-index: 2;">
+            <img style="width: 400px;" src="../assets/img/logo/logo_tomorrocrack_white.png" alt="" srcset="">
+            <ul style="list-style-type: none;">
+                <li>
+                    © RASEC S.A.S
+                </li>
+                <li>
+                <span class="material-icons">room</span><p>Cali, Valle del Cauca, Colombia</p>
+                </li>
+                <li>
+                    <p>Realizada por: Juan Bustamante - Camilo Reyes - Abdiel Arias</p>
+                    <p>Esta página se realiza para fines meramente académicos, los derechos de las canciones pertenecen a sus respectivos autores.</p>
+                </li>
+                <li style="text-decoration: underline; color:rgb(0, 255, 128);">
+                    Términos y Condiciones
+                </li>
+            </ul>
+            
+        </div>
+        
+        <video id="video-header3" autoplay loop muted>
+            <source src="../assets/video/pexels-alena-darmel-7722221.mp4" type="video/mp4">
+        </video> 
+        
     </footer>
 
     <div>
