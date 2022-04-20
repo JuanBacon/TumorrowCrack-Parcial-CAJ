@@ -13,6 +13,7 @@ let dencrypt = false;
 // Clase Imagen: imagen, titulo, alt'texto alternativo'
 
 const formArtist = document.querySelector("#formArtist");
+const formImg = document.querySelector('#formImg');
 
 class Artist {
   constructor(name, spotifyList, img, description, id) {
@@ -24,10 +25,11 @@ class Artist {
   }
 }
 class Img {
-  constructor(img, tittle, alt) {
+  constructor(img, tittle, alt, id) {
     this.img = img;
     this.tittle = tittle;
     this.alt = alt;
+    this.id = id ;
   }
 }
 
@@ -49,10 +51,49 @@ class UI{
              btnDelete.onclick = () =>{
                 deleteArtist(id);
              }
+             const btnEdit = document.createElement('button')
+
+             btnEdit.textContent = "Editar";
+             btnEdit.onclick = () =>{
+                editArtist(id);
+             }
+             newArtist.appendChild(btnEdit);
              newArtist.appendChild(btnDelete);
+             
+
              contentArtist.appendChild(newArtist)
         })
 
+    }
+
+    addImg(){
+      const contentImg = document.querySelector('#contentImg');
+      this.clearHTML(contentImg);
+
+      imgList.forEach((image) =>{
+
+        const {img, tittle, alt, id} = image;
+        const newImg = document.createElement('div');
+        newImg.dataset.id = id;
+        newImg.innerHTML = `<br> ${alt} <br> 
+             <img src="${img}" alt="" width = '200' heigh = '200'>  <br> ${tittle} <br> `
+             const btnDelete = document.createElement('button')
+             btnDelete.textContent = "borrar";
+             btnDelete.onclick = () =>{
+                deleteImg(id);
+             }
+             const btnEdit = document.createElement('button')
+
+             btnEdit.textContent = "Editar";
+             btnEdit.onclick = () =>{
+                editImg(id);
+             }
+  
+             newImg.appendChild(btnEdit);
+             newImg.appendChild(btnDelete);
+             contentImg.appendChild(newImg)
+
+      })
     }
 
     clearHTML(contentArtist){
@@ -147,6 +188,22 @@ if (loginFormElement) {
 
 function eventListeners() {
   formArtist.addEventListener("submit", uploadArtist);
+  formImg.addEventListener('submit', uploadImg)
+}
+
+function uploadImg(e){
+  e.preventDefault();
+  
+  const title = document.querySelector('#titleImage').value
+  const alter = document.querySelector('#alterImg').value
+  const imgFile = document.querySelector("#imgImg").files[0];
+  const imgUrl = URL.createObjectURL(imgFile);
+  const id = Date.now();
+  const image = new Img(imgUrl, title, alter, id)
+
+  imgList = [...imgList, image]
+
+  ui.addImg();
 }
 
 function uploadArtist(e) {
@@ -167,6 +224,7 @@ function uploadArtist(e) {
 
   ui.addArtist();
   console.log(artistList);
+  formArtist.reset()
 }
 
 
@@ -175,8 +233,14 @@ function deleteArtist(id){
     ui.addArtist()
 }
 
+function deleteImg(id){
+
+    imgList = imgList.filter( img => img.id !== id)
+    ui.addImg()
+}
 
 let artistList = [];
+let imgList = [];
 const ui = new UI();
 
 eventListeners();
