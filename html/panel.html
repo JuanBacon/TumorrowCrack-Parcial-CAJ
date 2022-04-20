@@ -6,6 +6,8 @@
     <title>TumorrowCrack Admin Panel</title>
   </head>
   <body>
+
+    <p id="idTmp" hidden></p>
     <form id="formArtist" action="">
       <label for="nameArtist">Nombre:</label>
       <input id="nameArtist" type="text" name="name" />
@@ -24,7 +26,7 @@
         accept="image/png, image/jpeg"
       />
       <br />
-      <input type="submit" value="Save" />
+      <input id="submitbtnArtist" type="submit" value="Crear" />
     </form>
 
     
@@ -44,7 +46,7 @@
         accept="image/png, image/jpeg"
       />
       <br />
-      <input type="submit" value="Save" />
+      <input id="submitbtnImg" type="submit" value="Save" />
     </form>
 
     <div id="divArtist" style="display: flex; flex-wrap: wrap">

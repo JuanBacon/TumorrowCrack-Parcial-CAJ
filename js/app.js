@@ -13,7 +13,7 @@ let dencrypt = false;
 // Clase Imagen: imagen, titulo, alt'texto alternativo'
 
 const formArtist = document.querySelector("#formArtist");
-const formImg = document.querySelector('#formImg');
+const formImg = document.querySelector("#formImg");
 
 class Artist {
   constructor(name, spotifyList, img, description, id) {
@@ -29,80 +29,78 @@ class Img {
     this.img = img;
     this.tittle = tittle;
     this.alt = alt;
-    this.id = id ;
+    this.id = id;
   }
 }
 
-class UI{
+class UI {
+  addHTMLArtist() {
+    const contentArtist = document.querySelector("#contentArtist");
+    this.clearHTML(contentArtist);
 
-    addHTMLArtist(){
-        const contentArtist = document.querySelector('#contentArtist')
-        this.clearHTML(contentArtist);
+    artistList.forEach((artist) => {
+      const { name, spotifyList, img, description, id } = artist;
 
-        artistList.forEach((artist) =>{
-            const {name,spotifyList, img , description, id} = artist;
+      const newArtist = document.createElement("div");
 
-            const newArtist = document.createElement('div');
-             newArtist.dataset.id = id;
-             newArtist.innerHTML = `${name} <br> ${spotifyList} <br> 
-             <img src="${img}" alt="" width = '200' heigh = '200'>  <br> ${description} <br> `
-             const btnDelete = document.createElement('button')
-             btnDelete.textContent = "borrar";
-             btnDelete.onclick = () =>{
-                deleteArtist(id);
-             }
-             const btnEdit = document.createElement('button')
+      newArtist.dataset.id = id;
 
-             btnEdit.textContent = "Editar";
-             btnEdit.onclick = () =>{
-                editArtist(id);
-             }
-             newArtist.appendChild(btnEdit);
-             newArtist.appendChild(btnDelete);
-             
+      newArtist.innerHTML = `${name} <br> ${spotifyList} <br> 
+               <br> ${description} <br> 
+               <img src="${img}" alt="" width = '200' heigh = '200'>  <br>`;
+      const btnDelete = document.createElement("button");
+      btnDelete.textContent = "borrar";
+      btnDelete.onclick = () => {
+        deleteArtist(id);
+      };
+      const btnEdit = document.createElement("button");
 
-             contentArtist.appendChild(newArtist)
-        })
-        sincStorage();
+      btnEdit.textContent = "Editar";
+      btnEdit.onclick = () => {
+        editArtist(artist);
+      };
+      newArtist.appendChild(btnEdit);
+      newArtist.appendChild(btnDelete);
 
+      contentArtist.appendChild(newArtist);
+    });
+    sincStorage();
+  }
+
+  addHTMLImg() {
+    const contentImg = document.querySelector("#contentImg");
+    this.clearHTML(contentImg);
+
+    imgList.forEach((image) => {
+      const { img, tittle, alt, id } = image;
+      const newImg = document.createElement("div");
+      newImg.dataset.id = id;
+      newImg.innerHTML = `<br> ${alt} <br> 
+             <img src="${img}" alt="" width = '200' heigh = '200'>  <br> ${tittle} <br> `;
+      const btnDelete = document.createElement("button");
+      btnDelete.textContent = "borrar";
+      btnDelete.onclick = () => {
+        deleteImg(id);
+      };
+      const btnEdit = document.createElement("button");
+
+      btnEdit.textContent = "Editar";
+      btnEdit.onclick = () => {
+        editImg(image);
+      };
+
+      newImg.appendChild(btnEdit);
+      newImg.appendChild(btnDelete);
+      contentImg.appendChild(newImg);
+    });
+    sincStorage();
+  }
+
+  clearHTML(contentArtist) {
+    while (contentArtist.firstChild) {
+      contentArtist.removeChild(contentArtist.firstChild);
     }
-
-    addHTMLImg(){
-      const contentImg = document.querySelector('#contentImg');
-      this.clearHTML(contentImg);
-
-      imgList.forEach((image) =>{
-
-        const {img, tittle, alt, id} = image;
-        const newImg = document.createElement('div');
-        newImg.dataset.id = id;
-        newImg.innerHTML = `<br> ${alt} <br> 
-             <img src="${img}" alt="" width = '200' heigh = '200'>  <br> ${tittle} <br> `
-             const btnDelete = document.createElement('button')
-             btnDelete.textContent = "borrar";
-             btnDelete.onclick = () =>{
-                deleteImg(id);
-             }
-             const btnEdit = document.createElement('button')
-
-             btnEdit.textContent = "Editar";
-             btnEdit.onclick = () =>{
-                editImg(id);
-             }
-  
-             newImg.appendChild(btnEdit);
-             newImg.appendChild(btnDelete);
-             contentImg.appendChild(newImg)
-
-      })
-      sincStorage();
-    }
-
-    clearHTML(contentArtist){
-        while(contentArtist.firstChild){
-            contentArtist.removeChild(contentArtist.firstChild)
-        }
-    }
+  }
 }
 // Comprobando que existe el elemento formulario del login
 if (loginFormElement) {
@@ -187,32 +185,61 @@ if (loginFormElement) {
   }
 }
 
-
 function eventListeners() {
   formArtist.addEventListener("submit", uploadArtist);
-  formImg.addEventListener('submit', uploadImg)
+  formImg.addEventListener("submit", uploadImg);
 
-  document.addEventListener("DOMContentLoaded", () =>{
-    imgList = JSON.parse(localStorage.getItem('imgList')) || [];
-    artistList = JSON.parse(localStorage.getItem('artistList')) || [];
+  document.addEventListener("DOMContentLoaded", () => {
+    imgList = JSON.parse(localStorage.getItem("imgList")) || [];
+    artistList = JSON.parse(localStorage.getItem("artistList")) || [];
     ui.addHTMLArtist();
-    ui.addHTMLImg()
-  })
+    ui.addHTMLImg();
+  });
 }
 
-function uploadImg(e){
+function uploadImg(e) {
   e.preventDefault();
 
-  const title = document.querySelector('#titleImage').value
-  const alter = document.querySelector('#alterImg').value
+  const title = document.querySelector("#titleImage").value;
+  const alter = document.querySelector("#alterImg").value;
   const imgFile = document.querySelector("#imgImg").files[0];
-  const imgUrl = URL.createObjectURL(imgFile);
   const id = Date.now();
-  const image = new Img(imgUrl, title, alter, id)
+  const reader = new FileReader();
 
-  
-  imgList = [...imgList, image]
 
+  if (editingImg) {
+    document.querySelector("#submitbtnImg").value = 'Crear';
+    const id = parseInt(document.querySelector("#idTmp").textContent);
+    imgList.forEach((image) => {
+      if (image.id == id) {
+        image.tittle = title;
+        image.alt = alter;
+        reader.addEventListener("load", () => {
+          console.log();
+          changeIMG(image, reader.result);
+        });
+        reader.readAsDataURL(imgFile);
+      } else {
+        return image;
+      }
+    });
+    ui.addHTMLImg();
+    editingImg = false;
+    formImg.reset();
+    return;
+  }
+
+  const image = new Img(null, title, alter, id);
+
+
+
+
+  reader.addEventListener("load", () => {
+    changeIMG(image, reader.result);
+  });
+
+  reader.readAsDataURL(imgFile);
+  imgList = [...imgList, image];
 
   ui.addHTMLImg();
   formImg.reset();
@@ -220,56 +247,102 @@ function uploadImg(e){
 
 function uploadArtist(e) {
   e.preventDefault();
- 
-  //Obtengo Datos del form
   const name = document.querySelector("#nameArtist").value;
   const spotify = document.querySelector("#spotifyArtist").value;
   const description = document.querySelector("#descriptionArtist").value;
-  // Obtengo el file, creo un url para la imagen
   const imgFile = document.querySelector("#imgArtist").files[0];
+  const reader = new FileReader();
   const id = Date.now();
 
+  if (editingArtist) {
+    document.querySelector("#submitbtnArtist").value = 'Crear';
+    const id = parseInt(document.querySelector("#idTmp").textContent);
+    artistList.forEach((artist) => {
+      if (artist.id == id) {
+        artist.name = name;
+        artist.spotify = spotify;
+        artist.description = description;
+        reader.addEventListener("load", () => {
+          console.log();
+          changeIMG(artist, reader.result);
+        });
+        reader.readAsDataURL(imgFile);
+      } else {
+        return artist;
+      }
+    });
+    ui.addHTMLArtist();
+    editingArtist = false;
+    formArtist.reset();
+    return;
+  } else {
+    
 
+    const artist = new Artist(name, spotify, null, description, id);
+    reader.addEventListener("load", () => {
+      console.log();
+      changeIMG(artist, reader.result);
+    });
+    reader.readAsDataURL(imgFile);
+    artistList = [...artistList, artist];
 
-  const artist = new Artist(name, spotify, null, description, id);
+    ui.addHTMLArtist();
+    console.log(artistList);
+    formArtist.reset();
+  }
+  //Obtengo Datos del form
+}
 
-
-  const reader = new FileReader();
-  reader.addEventListener('load', ()=>{
-    const imgData = reader.result;
-    this.artist.img = imgData;
-  })
-
-
-  reader.readAsDataURL(imgFile);
-  
-
-  artistList = [...artistList, artist];
-
+function changeIMG(obj, url) {
+  obj.img = url;
   ui.addHTMLArtist();
-  console.log(artistList);
-  formArtist.reset()
+  ui.addHTMLImg();
 }
 
-
-function deleteArtist(id){
-    artistList = artistList.filter(artist=> artist.id !== id)
-    ui.addHTMLArtist()
+function deleteArtist(id) {
+  artistList = artistList.filter((artist) => artist.id !== id);
+  ui.addHTMLArtist();
 }
 
-function deleteImg(id){
-
-    imgList = imgList.filter( img => img.id !== id)
-    ui.addHTMLImg()
+function deleteImg(id) {
+  imgList = imgList.filter((img) => img.id !== id);
+  ui.addHTMLImg();
 }
 
-function sincStorage(){
+function sincStorage() {
   localStorage.setItem("artistList", JSON.stringify(artistList));
-  localStorage.setItem('imgList', JSON.stringify(imgList));
+  localStorage.setItem("imgList", JSON.stringify(imgList));
 }
+
+function editArtist(artistObj) {
+  const { name, spotifyList, description, id } = artistObj;
+
+  document.querySelector("#nameArtist").value = name;
+  document.querySelector("#spotifyArtist").value = spotifyList;
+  document.querySelector("#descriptionArtist").value = description;
+  document.querySelector("#idTmp").textContent = id;
+  document.querySelector("#submitbtnArtist").value = 'Guardar';
+  editingArtist = true;
+}
+
+
+function editImg(imgObj) {
+  const { tittle, alt, id } = imgObj;
+
+   document.querySelector("#titleImage").value = tittle;
+   document.querySelector("#alterImg").value = alt;
+  document.querySelector("#idTmp").textContent = id;
+
+  document.querySelector("#submitbtnImg").value = 'Guardar';
+  editingImg = true;
+}
+
 
 let artistList = [];
 let imgList = [];
 const ui = new UI();
+let editingArtist = false;
+let editingImg = false;
+
 //localStorage.clear();
 eventListeners();
