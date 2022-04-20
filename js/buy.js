@@ -22,7 +22,7 @@ function getPrice(){
 function getDisccount(){
     let disccount = 0
     if(dissccountCodeInput.value != ""){
-        if(dissccountCodeInput.value == "ABCDE-FGHIJ-KLMNO"){
+        if(dissccountCodeInput.value == "KNBHY-LOMNB-PEUIX"){
             disccount = 0.5;
         }else {
             alert("Codigo inválido")

@@ -9,16 +9,16 @@ function newQuestion(params) {
 }
 // Create the array allQuestions and generate all of the new questions
 var allQuestions = [
-    ["<p><b>Question 1:</b><br/> How much is 1 + 1?<p/>", ["1", "2", "3", "4"], 1],
-    ["<p><b>Question 2:</b><br/>How much is 2 + 2?<p/>", ["2", "6", "3", "4"], 3],
-    ["<p><b>Question 3:</b><br/>How much is 3 + 3?<p/>", ["6", "9", "3", "12"], 0],
-    ["<p><b>Question 4:</b><br/>How much is 4 + 4?<p/>", ["10", "12", "8", "4"], 2],
-    ["<p><b>Question 5:</b><br/>How much is 5 + 5?<p/>", ["10", "15", "14", "11"], 0],
-    ["<p><b>Question 6:</b><br/>How much is 6 + 6?<p/>", ["11", "12", "13", "14"], 1],
-    ["<p><b>Question 7:</b><br/>How much is 7 + 7?<p/>", ["49", "21", "15", "14"], 3],
-    ["<p><b>Question 8:</b><br/>How much is 8 + 8?<p/>", ["0", "16", "64", "24"], 1],
-    ["<p><b>Question 9:</b><br/>How much is 9 + 9?<p/>", ["81", "18", "15", "24"], 1],
-    ["<p><b>Question 10:</b><br/>How much is 10 + 10?<p/>", ["10", "20", "30", "40"], 1]
+    ["<p><b>Question 1:</b><br/> ¿Como se llama el festival?<p/>", ["Tomorrowcrack", "Tomorrowland", "Las quintas de don simon", "Teres Festival"],0 ],
+    ["<p><b>Question 2:</b><br/>¿Cual de estos no patrocina el festival?<p/>", ["Mc Donalds", "Spotify", "Ferretería la 13", "TDT"], 2],
+    ["<p><b>Question 3:</b><br/>¿En donde toma lugar el festival?<p/>", ["La piedra del peñon", "Autocine Cali", "El hueco", "El Boulevar"], 1],
+    ["<p><b>Question 4:</b><br/>¿M de ...?<p/>", ["Minecraft", "Miercoles", "Motomami, Motomami, Motomami 🏍️", "Macta llega"], 2],
+    ["<p><b>Question 5:</b><br/>¿Cual es el mejor album de Billie Eillish?<p/>", ["Los 50 de Joselito", "El mal querer", "when we all fall asleep where do we go", "Thriller"], 2],
+    ["<p><b>Question 6:</b><br/>¿De dónde es Bad Bunny?<p/>", ["Rusia", "Puerto Rico", "Colombia", "Venezuela"], 1],
+    ["<p><b>Question 7:</b><br/>¿De dónde es Billie Eilish?<p/>", ["Chile", "Hondura", "Uganda", "EEUU"], 3],
+    ["<p><b>Question 8:</b><br/>¿De dónde es Drake?<p/>", ["Brazil", "Canada", "Australia", "Argentina"], 1],
+    ["<p><b>Question 9:</b><br/>¿Cúal es el mejor álbum de Bad bunny?<p/>", ["YHLQMDLG (2020)", "La cucaracha (1990)", "Jordan (2021)", "Mujeriego (2022)"], 0],
+    ["<p><b>Question 10:</b><br/>¿Cúal es el mejor Álbum de Drake?<p/>", ["SANZ (2005)", "UNLIMITED LOVE (2000)", "Take Care (2011)", "Mi sangre (2005)"], 2]
    ].map(newQuestion);
 // Create and initialize the total (to 0), number (to 0), and totalQuestions (to the length of allQuestions) variables
 var total = 0, number = 0, totalQuestions = allQuestions.length, answers = [];

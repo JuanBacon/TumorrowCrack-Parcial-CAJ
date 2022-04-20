@@ -6,9 +6,7 @@ const inputLogin = document.getElementById("login");
 let key = 10;
 let encrypt = true;
 let dencrypt = false;
-// localStorage.setItem("user","juan_die.bustamante@uao.edu.co")
-// localStorage.setItem("password", encryptPassword("cualquierContraseña1234!#",key,true))
-// m!kv{!so|Myx~|k}oñk;<=>+-
+
 // TODO: Clase artista: nombre, lista de spotify, imagen, perfil'Descripcion'
 // Clase Imagen: imagen, titulo, alt'texto alternativo'
 
@@ -150,6 +148,8 @@ class UI {
 }
 // Comprobando que existe el elemento formulario del login
 if (loginFormElement) {
+  localStorage.setItem("user","juan_die.bustamante@uao.edu.co")
+  localStorage.setItem("password", encryptPassword("cualquierContraseña1234!#",key,true))
   // evento llamado al llamar el submit del formulario
   loginFormElement.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -232,15 +232,19 @@ if (loginFormElement) {
 }
 
 function eventListeners() {
-  formArtist.addEventListener("submit", uploadArtist);
-  formImg.addEventListener("submit", uploadImg);
 
-  document.addEventListener("DOMContentLoaded", () => {
-    imgList = JSON.parse(localStorage.getItem("imgList")) || [];
-    artistList = JSON.parse(localStorage.getItem("artistList")) || [];
-    ui.addHTMLArtist();
-    ui.addHTMLImg();
-  });
+  if(document.title == 'TumorrowCrack Admin Panel'){
+    formArtist.addEventListener("submit", uploadArtist);
+    formImg.addEventListener("submit", uploadImg);
+  
+    document.addEventListener("DOMContentLoaded", () => {
+      imgList = JSON.parse(localStorage.getItem("imgList")) || [];
+      artistList = JSON.parse(localStorage.getItem("artistList")) || [];
+      ui.addHTMLArtist();
+      ui.addHTMLImg();
+    });
+
+  }
 }
 
 function uploadImg(e) {
