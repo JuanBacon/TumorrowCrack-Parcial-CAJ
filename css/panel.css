@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  color: #1d1d1d;
 }
 html {
   scroll-behavior: smooth;
@@ -23,6 +24,7 @@ body {
     border:  4px white solid ;
 
 }
+
 
 #adminArtists , #adminGallery{
 

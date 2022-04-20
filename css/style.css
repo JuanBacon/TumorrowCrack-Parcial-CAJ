@@ -272,7 +272,9 @@ video {
   height: auto;
   color: white;
 }
-
+#test{
+  height: auto;
+}
 #img {
   background-color: #1d1d1d;
   color: white;
@@ -304,7 +306,6 @@ video {
 #partners {
   padding-top: 80px;
   height: auto;
-  background-color: azure;
 }
 #partners h2{
   text-shadow: #1d1d1d;
