@@ -253,6 +253,8 @@ video {
   color: white;
   height: auto;
   justify-content: flex-start;
+  margin-top: -50px;
+  z-index: -1;
 }
 
 .note{
