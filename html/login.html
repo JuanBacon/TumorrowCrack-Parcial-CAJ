@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/animations.css">
     <link rel="icon" href="../assets/img/logo/logo_tomorrocrack_square.png">
-    <title>TumorrowCrack Comprar</title>
-</head>
 
-<body onload="getPrice()">
-    
+    <title>TumorrowCrack Login</title>
+</head>
+<body>
     <header id="header">
         <a href="../html/index.html#heroContent" id="logoImglink"><img id="logoImg" src="../assets/img/logo/logo_tomorrocrack_white.png" alt="Logo"></a>
         <a href="../html/index.html#description" class="menuButton">
@@ -30,14 +29,20 @@
         </a>
         <a href="../html/login.html" class="menuButton" id="loginLink"><p>Iniciar sesión</p></a>
     </header>
-
     <main id="container">
-        <section class="sectionPage form" id="success">
-            <h2>¡COMPRASTE TUS ENTRADAS!</h2>
-            <form action="../html/index.html">
-                
-                <input type="submit" value="VOLVER" id="back">
+        <section class="sectionPage" id="formContainer">
+            <form id="loginForm" method="get">
+                <label for="email">Email</label>
+                <br>
+                <input type="email" name="email" id="email" required>
+                <br>
+                <label for="pass">Password</label>
+                <br>
+                <input type="password" name="pass" id="pass" required>
+                <br>
+                <input type="submit" value="LOG IN" id="login">
             </form>
+            <img src="../assets/img/logo/Logotipo_Tomorrowcrack.png" alt="logo" height="200px">
         </section>
     </main>
     <footer id="footer">
@@ -48,8 +53,6 @@
         <p>Terminos y condiciones</p>
         <img src="../assets/img/logo/logo_tomorrocrack_white.png" alt="logo" height="38px" width="120px">
     </footer>
-    <script src="../js/index.js"></script>
-    <script src="../js/buy.js"></script>
+    <script src="../js/app.js"></script>
 </body>
-
 </html>

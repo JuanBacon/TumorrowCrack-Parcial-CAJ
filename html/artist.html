@@ -6,10 +6,12 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/animations.css">
     <link rel="icon" href="../assets/img/logo/logo_tomorrocrack_square.png">
-    <title>TumorrowCrack Comprar</title>
+    <link rel="stylesheet" href="../css/show.css">
+
+    <title>TumorrowCrack Artistas</title>
 </head>
 
-<body onload="getPrice()">
+<body>
     
     <header id="header">
         <a href="../html/index.html#heroContent" id="logoImglink"><img id="logoImg" src="../assets/img/logo/logo_tomorrocrack_white.png" alt="Logo"></a>
@@ -32,13 +34,15 @@
     </header>
 
     <main id="container">
-        <section class="sectionPage form" id="success">
-            <h2>¡COMPRASTE TUS ENTRADAS!</h2>
-            <form action="../html/index.html">
-                
-                <input type="submit" value="VOLVER" id="back">
-            </form>
+        <section class="sectionPage" id="seeArtists">
+            <h1>¡NUESTROS ARTISTAS INVITADOS!</h1>
         </section>
+        <section class="showContent" id="seeAdded">
+            <div id="mainContent" >
+              <section id="contentArtist" >
+              </section>
+            </div>
+          </section>
     </main>
     <footer id="footer">
         <h3>TOMORROWCRACK'S FESTIVAL</h3>
@@ -48,8 +52,7 @@
         <p>Terminos y condiciones</p>
         <img src="../assets/img/logo/logo_tomorrocrack_white.png" alt="logo" height="38px" width="120px">
     </footer>
-    <script src="../js/index.js"></script>
-    <script src="../js/buy.js"></script>
+    <script src="../js/show.js"></script>
 </body>
 
 </html>
